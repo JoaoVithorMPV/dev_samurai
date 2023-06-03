@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const test = [
+        {
+          id: 1,
+          name: "João",
+          lastName: "Vitorino",
+        },
+        {
+          id: 2,
+          name: "Pedro",
+          lastName: "Silva",
+        },
+      ];
+
+      console.log(JSON.stringify(test));
+
+      let test2 =
+        '[{"id":1,"name":"João","lastName":"Vitorino"},{"id":2,"name":"Pedro","lastName":"Silva"}]';
+
+      console.log(JSON.parse(test2));
+    </script>
+  </body>
+</html>

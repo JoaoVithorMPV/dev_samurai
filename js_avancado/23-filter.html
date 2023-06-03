@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [1, 18, 10, 22];
+
+      let res = [];
+      for (const n of numbers) {
+        if (n >= 10) {
+          res.push(n);
+        }
+      }
+
+      console.log(res);
+
+      const teste = function (num) {
+        return num > 10;
+      };
+
+      let res2 = numbers.filter(teste);
+
+      console.log(res2);
+
+      let res3 = numbers.filter(function (t) {
+        return t > 10;
+      });
+
+      console.log(res3);
+
+      let res4 = numbers.filter((t) => t >= 10);
+
+      console.log(res4);
+
+      console.log("ESPACO");
+
+      let people = [
+        {
+          name: "Pedro",
+          age: 14,
+          gender: "M",
+        },
+        {
+          name: "Aisha",
+          age: 18,
+          gender: "F",
+        },
+        {
+          name: "Marcelo",
+          age: 45,
+          gender: "M",
+        },
+      ];
+
+      const m = people.filter((p) => p.age >= 18);
+      console.log(m);
+
+      const n = people.filter((p) => p.age >= 18 && p.gender === "M");
+      console.log(n);
+    </script>
+  </body>
+</html>

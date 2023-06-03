@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let idioma = prompt("Por favor, digite o código do IDIOMA!");
+      let variacao = prompt("Por favor, digite o código de VARIAÇÃO!");
+
+      if (idioma == "pt" && (variacao == "pt" || variacao == "br")) {
+        alert("Olá! (pt-br / pt-pt)");
+      } else if (idioma == "en" && variacao == "us") {
+        alert("Hi! (en-us)");
+      } else if (idioma == "en" && variacao == "gt") {
+        alert("Hello! (en-gt)");
+      } else {
+        alert(
+          "idioma e(ou) variação não identificado(s), tente novamente por favor!"
+        );
+      }
+    </script>
+  </body>
+</html>

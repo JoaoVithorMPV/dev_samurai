@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let valores = [10, 20, 30, 40];
+
+      let sum = valores.reduce((total, item) => total + item, 0);
+      console.log(sum);
+
+      let divisao1 = sum / valores.length;
+      console.log(divisao1);
+
+      console.log("ESPACO");
+
+      console.log();
+
+      let divisao2 = valores.reduce(
+        (acumulador, item, index) => (acumulador + item) / (index + 1),
+        0
+      );
+      console.log(divisao2);
+
+      console.log("ESPACO");
+
+      let double = valores.reduce(
+        (acumulador, item) => acumulador.concat(item + 2),
+        []
+      );
+      console.log(double);
+
+      let teste = valores.map((t) => t + 2);
+      console.log(teste);
+
+      let filtro = valores.reduce((acumulador, item) => {
+        if (item > 20) {
+          acumulador.push(item);
+        }
+        return acumulador;
+      }, []);
+      console.log(filtro);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function testeSoma(b) {
+        return (b *= b);
+      }
+
+      let b = 2;
+      console.log(testeSoma(b));
+      console.log(b);
+
+      function testeMult(aaa) {
+        aaa.valor3 *= aaa.valor1;
+        return aaa;
+      }
+      let testeVar = {
+        valor1: 10,
+        valor2: 20,
+        valor3: 30,
+      };
+      console.log(testeMult(testeVar));
+      console.log(testeVar.valor3);
+    </script>
+  </body>
+</html>

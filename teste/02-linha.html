@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+    <style>
+      * {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas></canvas>
+    <script>
+      const canvasEl = document.querySelector("canvas"),
+        canvasCtx = canvasEl.getContext("2d");
+
+      const lineWidth = 15;
+
+      function setup() {
+        canvasEl.width = canvasCtx.width = window.innerWidth;
+        canvasEl.height = canvasCtx.height = window.innerHeight;
+      }
+
+      function draw() {
+        canvasCtx.fillStyle = "#286047";
+        canvasCtx.fillRect(0, 0, innerWidth, innerHeight);
+
+        const x = window.innerWidth / 2 - lineWidth / 2;
+        const y = 0;
+        const w = lineWidth;
+        const h = window.innerHeight;
+
+        canvasCtx.fillStyle = "#ffffff";
+        canvasCtx.fillRect(x, y, w, h);
+      }
+
+      setup();
+      draw();
+    </script>
+  </body>
+</html>

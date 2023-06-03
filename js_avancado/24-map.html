@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [10, 20, 30, 40, 50];
+      console.log(numbers);
+
+      const double = numbers.map((n) => n * n);
+      console.log(double);
+
+      const double2 = numbers.map((n) => Math.pow(n, 5));
+      console.log(double2);
+
+      console.log("ESPACO");
+
+      const fahrenheit = [0, 32, 45, 46, 47, 91, 93, 121];
+      console.log(fahrenheit);
+      const celcius = fahrenheit.map((f) => Math.round(((f - 32) * 5) / 9));
+      console.log(celcius);
+
+      console.log("ESPACO");
+
+      const people = [
+        {
+          name: "João",
+          age: 20,
+        },
+        {
+          name: "PeDro",
+          age: 2,
+        },
+        {
+          name: "VITOr",
+          age: 4,
+        },
+      ];
+      console.log(people);
+
+      const peoplenormalized = people.map((p) => p.name.toUpperCase());
+      console.log(peoplenormalized);
+    </script>
+  </body>
+</html>

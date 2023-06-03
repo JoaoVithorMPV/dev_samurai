@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const inf = {
+        nome: "João Vitor",
+        idade: "20 anos",
+        cpf: "000.000.000-00",
+      };
+
+      // for (const percursor of nomes) {
+      //   console.log(percursor);
+      // }
+
+      // for (let i = 0; i < nomes.length; i++) {
+      //   console.log(nomes[i]);
+      // }
+
+      for (const callPropriedade in inf) {
+        console.log(callPropriedade);
+        console.log(inf[callPropriedade]);
+      }
+      console.log(inf.nome);
+      console.log("espaço");
+
+      // for (const teste of inf) {
+      //   console.log(teste);
+      // }
+    </script>
+  </body>
+</html>
