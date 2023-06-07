@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Executar</button>
+    <script>
+      let count = 0;
+      function testPromise() {
+        const promiseCont = ++count;
+        console.log("Iniciou a execução!");
+
+        new Promise((resolvido, rejeitado) => {
+          setTimeout(() => {
+            if (promiseCont % 2 == 0) {
+              resolvido(promiseCont);
+            } else {
+              rejeitado(promiseCont);
+            }
+          }, 2000);
+        })
+          .then((valor) => {
+            console.log(`contador ${valor}`);
+          })
+          .catch(() => {
+            console.error("erro ao executar o promisse");
+          });
+
+        console.log("Finalizou a execução!");
+      }
+
+      const buttonEl = document.querySelector("button");
+      buttonEl.addEventListener("click", testPromise);
+    </script>
+  </body>
+</html>

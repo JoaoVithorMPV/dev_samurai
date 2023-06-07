@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>O teste virá logo abaixo</h1>
+    <script>
+      const teste = document.createElement("h2");
+      teste.innerText = "testando a criação dinâmica de elementos na página";
+      teste.style.color = "red";
+
+      document.body.append(teste);
+
+      const lista = document.createElement("ul");
+
+      const listaItem1 = document.createElement("li");
+      listaItem1.innerHTML = "Todo MVC";
+
+      const listaItem2 = document.createElement("li");
+      listaItem2.innerHTML = "Github API";
+
+      const listaItem3 = document.createElement("li");
+      listaItem3.innerHTML = "eCommerce";
+
+      lista.append(listaItem1);
+      lista.append(listaItem2);
+      lista.append(listaItem3);
+
+      document.body.append(lista);
+    </script>
+  </body>
+</html>

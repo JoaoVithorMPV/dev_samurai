@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title">Título que terá a cor e tamanho alterados!</h1>
+    <button id="change-color">Alterar cor e tamanho</button>
+    <script>
+      const titleEl = document.querySelector("#title");
+
+      const buttonEl = document.querySelector("#change-color");
+      buttonEl.addEventListener("click", () => {
+        titleEl.style = "color: red; font-size: 55px";
+
+        // titleEl.style.color = "blue";
+        // titleEl.style.fontSize = "55px";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Recuperar dados</button>
+    <br />
+    <br />
+    <script>
+      const loadData = () => {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://api.github.com/users/felipefontoura");
+        xhr.send(null);
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === 4) {
+            const res = JSON.parse(xhr.responseText);
+
+            const name = res.name;
+            const avatarUrl = res.avatar_url;
+            const followers = res.followers;
+            const blogUrl = res.blog;
+
+            // console.log({ name, avatarUrl, followers, blogUrl });
+            const avatarEl = document.createElement("img");
+            avatarEl.setAttribute("width", "128");
+            avatarEl.setAttribute("src", avatarUrl);
+
+            const nameEl = document.createElement("h1");
+            nameEl.innerText = name;
+
+            const followersEl = document.createElement("p");
+            followersEl.innerText = `Seguidores ${followers}`;
+
+            const blogEl = document.createElement("a");
+            blogEl.setAttribute("href", `http://${blogUrl}`);
+            blogEl.innerText = `Ecessar site: ${blogUrl} `;
+
+            document.body.appendChild(avatarEl);
+            document.body.appendChild(nameEl);
+            document.body.appendChild(followersEl);
+            document.body.appendChild(blogEl);
+          }
+        };
+      };
+
+      const buttonEl = document.querySelector("button");
+      buttonEl.addEventListener("click", loadData);
+    </script>
+  </body>
+</html>
