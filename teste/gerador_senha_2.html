@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Gerador de senha</h1>
+    <p>Utilize o nosso gerador online para criar uma senha forte e segura.</p>
+    <input id="senha-randow" type="text" name="senhaRandow" />
+    <input
+      id="cumprimento-senha"
+      type="range"
+      name="password-lenght"
+      value="16"
+      min="4"
+      max="64"
+    />
+    <button id="btn-copiar">Copiar senha</button>
+    <script>
+      let caracteresLength = 16;
+      const senhaInput = document.querySelector("#senha-randow");
+      function geradorSenha() {
+        const caracteres =
+          "abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ123456789";
+        let senha = "";
+
+        for (i = 0; i < caracteresLength; i++) {
+          const numeroRandow = Math.floor(Math.random() * caracteres.length);
+          senha += caracteres.substring(numeroRandow, numeroRandow + 1);
+
+          senhaInput.value = senha;
+        }
+      }
+
+      const cumprimentoSenha = document.querySelector("#cumprimento-senha");
+      cumprimentoSenha.addEventListener("input", function () {
+        caracteresLength = cumprimentoSenha.value;
+
+        geradorSenha();
+      });
+
+      function copy() {
+        navigator.clipboard.writeText(senhaInput.value);
+      }
+
+      const btnCopiar = document.querySelector("#btn-copiar");
+      btnCopiar.addEventListener("click", copy);
+
+      geradorSenha();
+    </script>
+  </body>
+</html>
